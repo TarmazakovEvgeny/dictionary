@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?scenebuilder-stylesheet vista.css?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.*?>
+
+<StackPane fx:id="vista2" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="700.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.Vista2Controller">
+  <children>
+    <SplitPane dividerPositions="0.32808022922636104" focusTraversable="true" prefHeight="160.0" prefWidth="200.0">
+      <items>
+        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="428.0" prefWidth="226.0">
+          <children>
+            <TreeView layoutX="8.0" layoutY="70.0" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="344.0" prefWidth="212.0" />
+            <TextField layoutX="8.0" layoutY="14.0" prefHeight="40.0" prefWidth="212.0" text="НАЗВАНИЕ ВЫБРАННОГО СЛОВАРЯ" />
+          </children>
+        </AnchorPane>
+        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="428.0" prefWidth="466.0">
+          <children>
+            <TabPane layoutX="7.0" layoutY="0.0" prefHeight="418.0" prefWidth="466.0001220703125" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Все термины">
+                  <content>
+                    <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                      <children>
+                        <TableView layoutX="14.0" layoutY="14.0" prefHeight="325.0" prefWidth="303.0">
+                          <columns>
+                            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="84.0" text="Термин" />
+                            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="98.0" text="Сокращение" />
+                            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="121.0" text="На английском" />
+                          </columns>
+                        </TableView>
+                      </children>
+                    </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Сокращения">
+                  <content>
+                    <TableView maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="296.0" prefWidth="304.0">
+                      <columns>
+                        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="144.0" text="Краткое обозначение" />
+                        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="177.0" text="Полное обозначение" />
+                      </columns>
+                    </TableView>
+                  </content>
+                </Tab>
+                <Tab text="Основные термины">
+                  <content>
+                    <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                      <children>
+                        <TableView layoutX="14.0" layoutY="14.0" prefHeight="279.0" prefWidth="293.0">
+                          <columns>
+                            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="68.0" text="Термин" />
+                            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="101.0" text="Сокращение" />
+                            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="133.0" text="На английском" />
+                          </columns>
+                        </TableView>
+                      </children>
+                    </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+          </children>
+        </AnchorPane>
+      </items>
+    </SplitPane>
+  </children>
+</StackPane>
