@@ -19,6 +19,7 @@ public class MainController {
     /**
      * Holder of a switchable vista.
      */
+
     @FXML
     private StackPane vistaHolder;
 
