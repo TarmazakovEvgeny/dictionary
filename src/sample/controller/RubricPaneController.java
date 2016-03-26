@@ -5,9 +5,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 
-/**
- * Created by user2 on 23.03.2016.
- */
 public class RubricPaneController {
 
     @FXML

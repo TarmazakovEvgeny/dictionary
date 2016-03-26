@@ -7,9 +7,9 @@ import javafx.scene.layout.StackPane;
 import sample.Pane;
 import sample.PaneNavigator;
 
-import java.util.LinkedHashSet;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
+import java.util.ListIterator;
 
 /**
  * Main controller class for the entire layout.
@@ -22,7 +22,8 @@ public class MainController {
     @FXML
     private StackPane vistaHolder;
 
-    private Set<Pane> paneList = new LinkedHashSet<Pane>();
+    private List<Pane> historyPaneList = new LinkedList<Pane>();
+    private ListIterator<Pane> paneListIterator = historyPaneList.listIterator();
 
     /**
      * Replaces the vista displayed in the vista holder with a new vista.
@@ -36,25 +37,38 @@ public class MainController {
     @FXML
     public void setChoosePane(ActionEvent event) {
         PaneNavigator.loadPane(Pane.CHOOSE);
+        paneListIterator.add(Pane.CHOOSE);
     }
 
     @FXML
     public void setDownloadPane(ActionEvent event) {
         PaneNavigator.loadPane(Pane.DOWNLOAD);
+        paneListIterator.add(Pane.DOWNLOAD);
     }
 
     @FXML
     public void setRubricPane(ActionEvent event) {
         PaneNavigator.loadPane(Pane.RUBRIC);
+        paneListIterator.add(Pane.RUBRIC);
     }
 
     @FXML
     public void nextPane(ActionEvent event) {
-//        PaneNavigator.loadPane(PaneNavigator.RUBRIC_PANE);
+        if (paneListIterator.hasNext()) {
+            if (!paneListIterator.hasPrevious()) {
+                paneListIterator.next();
+            }
+            PaneNavigator.loadPane(paneListIterator.next());
+        }
     }
 
     @FXML
     public void previousPane(ActionEvent event) {
-//        PaneNavigator.loadPane(PaneNavigator.RUBRIC_PANE);
+        if (paneListIterator.hasPrevious()) {
+            if (!paneListIterator.hasNext()) {
+                paneListIterator.previous();
+            }
+            PaneNavigator.loadPane(paneListIterator.previous());
+        }
     }
 }
